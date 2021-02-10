@@ -1,0 +1,11 @@
+.LoginStyleP{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+}
+.LoginStyleH{
+    padding: 5rem;
+
+}

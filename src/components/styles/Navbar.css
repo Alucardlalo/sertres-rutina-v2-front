@@ -1,0 +1,54 @@
+/*en movil*/
+@media screen and (max-width: 1000px) {
+    .LogoImgSm{
+        position: absolute;
+        height: 100%;
+        right: 0ex;
+        top: 0rem;
+    }
+    .LogoImg{
+        display: none;
+    }
+    
+}
+@media screen and (max-width: 768px) {
+    .LogoImgSm{
+        position: absolute;
+        height: 50px;
+        right: 0%;
+        top: -15ex;
+    }
+    .LogoImg{
+        display: none;
+    }
+    
+}
+
+@media screen and (max-width: 280px) {
+    .LogoImgSm{
+        position: absolute;
+        height: 30px;
+        right: 0%;
+        top: -15ex;
+    }
+    .LogoImg{
+        display: none;
+    }
+    
+}
+
+
+/*en pc*/
+@media screen and (min-width: 1000px) {
+    .LogoImgSm{
+        display: none;
+    }
+    .LogoImg{
+        position: absolute;
+        width: 20%;
+        height: 100%;
+        right: 0ex;
+
+    }
+    
+}

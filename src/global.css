@@ -1,0 +1,95 @@
+.titleMain{
+  color: white;
+  padding:15px;
+}
+html {
+    font-family: sans-serif;
+    font-size: 12px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 0 none;
+    outline: 0;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    border: 0 none;
+    outline: 0;
+    background-color: #333333;
+}
+.table{
+  color:white;
+}
+
+.buttons{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+}
+
+.loadingC{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: end;
+    min-height: 10vh;
+    width: 20%;
+}
+
+.btnLogout{
+    background: none;
+    border: none;
+    color: cadetblue;
+    font-size: 15px;
+}
+
+@media screen and (min-width: 1000px) {
+    .ContenedorP{
+        margin-left: 3.5rem;
+        margin-right: 3.5rem;
+    }
+    .tablaVariable{
+        columns: 40%;
+        padding-left: 1rem;
+    }
+    
+    .ContenedorS{
+        margin: 0rem; 
+    }
+
+    .LogoLogin{
+        position: relative;
+        width: 30%;
+        height: 20%;
+        top: 3rem;
+        left: 40%;
+    }
+        
+    }
+
+@media screen and (max-width: 1000px) {
+    .ContenedorP{
+        margin: 0.6rem;
+    }
+    
+    .ContenedorS{
+        margin: 0rem;
+    }
+    .tablaVariable{
+        columns: auto;
+        padding-left: 1rem;
+    }
+    .LogoLogin{
+        position: relative;
+        width: 100%;
+    }
+        
+    }

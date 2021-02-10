@@ -1,0 +1,135 @@
+@media screen and (min-width: 1000px) {
+    .tableAADiv{
+        position: absolute;
+        left: 2rem;
+        right: 2rem;
+        width: 95%;
+        overflow-y: auto;
+        height: 75%;
+        overflow-x: hidden;     
+    }
+    .prestoAA{
+        font-size: 1.5rem;
+        height: auto;
+        width: 100%;
+    }    
+    .prestoAARes{
+        float: right;
+        position: relative;
+        
+    }
+    .AAData{/*tabla style*/
+        position: relative;
+        width: 100%;  
+    }
+    .prestoAAResC{
+        float: right;
+        position: relative;
+        color: white;
+        font-size: 1.5rem;
+        
+    }  
+    .prestoAAC{
+        font-size: 1.5rem;
+        height: auto;
+        width: 100%;
+        color: aquamarine;
+
+    }
+    .PDF{
+      position: absolute;
+      top: 14rem;
+      left: 35rem;
+        
+    }      
+    }
+
+@media screen and (max-width: 1000px) and (max-height: 870px) {
+    .tableAADiv{
+        position: absolute;
+        left: 1rem;
+        right: 2rem;
+        width: 95%;
+        overflow-y: auto;
+        height: 75%;
+        overflow-x: hidden;     
+    }
+    .prestoAA{
+        font-size: 1.5rem;
+        height: auto;
+        width: 100%;
+
+    }
+    .prestoAARes{
+        float: right;
+        position: relative;
+
+    }
+    .AAData{
+        position: relative;
+        width: 320%;
+          
+    }
+     .completeMessage{
+        color: yellow;
+        font-size: 1rem;
+     }
+     .prestoAAResC{
+        float: right;
+        position: relative;
+        color: white;
+        font-size: 1.5rem;
+        width: auto;
+    }
+    .prestoAAC{
+        font-size: 1.5rem;
+        height: auto;
+        width: 70%;
+        color: aquamarine;
+
+    } 
+    }
+@media screen and (max-width: 1000px) and (max-height: 740px) { 
+    .tableAADiv{
+        position: absolute;
+        left: 1rem;
+        right: 1rem;
+        width: 95%;
+        overflow-y: auto;
+        height:  110vmin;
+        overflow-x: hidden;     
+    }
+}
+@media screen and (max-width: 1000px) and (max-height: 570px) { 
+    .tableAADiv{
+        position: absolute;
+        left: 1rem;
+        right: 1rem;
+        width: 95%;
+        overflow-y: auto;
+        height:  80vmin;
+        overflow-x: hidden;     
+    }
+}
+@media screen and (width: 768px) and (height: 1024px) { 
+    .tableAADiv{
+        position: absolute;
+        left: 1rem;
+        right: 1rem;
+        width: 95%;
+        overflow-y: auto;
+        height:  80vmin;
+        overflow-x: hidden;     
+    }
+}
+@media screen and (width: 411px) and (height: 823px) { 
+    .tableAADiv{
+        position: absolute;
+        left: 1rem;
+        right: 1rem;
+        width: 95%;
+        overflow-y: auto;
+        height:  130vmin;
+        overflow-x: hidden;     
+    }
+}                           

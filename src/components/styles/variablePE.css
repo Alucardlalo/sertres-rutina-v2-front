@@ -1,0 +1,161 @@
+@media screen and (min-width: 1000px) {
+    .tablePEDiv{
+        position: absolute;
+        left: 2rem;
+        right: 2rem;
+        width: 95%;
+        overflow-y: auto;
+        height: 75%;
+        overflow-x: hidden;     
+    }
+    .prestoPE{
+        font-size: 1.5rem;
+        height: 50%;
+        width: auto;
+    }    
+    .prestoPERes{
+        float: right;
+        position: relative;
+        height: 50%;
+        
+    }
+    .prestoPESeparator{
+        color: yellow;
+        height: 100%;
+        width: 100%;
+    }
+    .PEData{
+        position: relative;
+        width: 100%;
+        height: auto;  
+    }
+    
+    .PEDataSeparator{
+        width: 100%;
+        font-size: 2rem;
+    }
+    .prestoPEC{
+        font-size: 1.5rem;
+        height: auto;
+        width: 100%;
+        color: aquamarine;
+    }
+    .prestoPEResC{
+        float: right;
+        position: relative;
+        color: white;
+        font-size: 1.5rem;
+        
+    }    
+    }
+
+@media screen and (max-width: 1000px) {
+    .tablePEDiv{
+        position: absolute;
+        left: 1rem;
+        right: 1rem;
+        width: 95%;
+        overflow-y: auto;
+        height:  140vmin;
+        overflow-x: hidden;     
+    }
+    .prestoPE{
+        font-size: 1.5rem;
+        height: auto;
+        width: 100%;
+
+    }
+    .tablePE{
+        position: relative;
+        width: 300%;  
+    }
+    .prestoPERes{
+        float: right;
+        position: relative;
+        
+       
+
+    }
+    .trPE{
+        width: 100%;
+        position: static;
+    }
+    .PEData{
+        position: relative;
+        width: 330%;  
+    }
+     
+    .prestoPESeparator{
+        color: yellow;
+        height: 100%;
+        width: 100%;
+    }
+    .prestoPEC{
+        font-size: 1.5rem;
+        height: auto;
+        width: 100%;
+        color: aquamarine;
+    }
+    .prestoPEResC{
+        float: right;
+        position: relative;
+        color: white;
+        font-size: 1.5rem;
+        
+    }      
+    }
+@media screen and (max-width: 1000px) and (max-height: 870px) { 
+    .tablePEDiv{
+        position: absolute;
+        left: 1rem;
+        right: 1rem;
+        width: 95%;
+        overflow-y: auto;
+        height:  140vmin;
+        overflow-x: hidden;     
+    }
+}
+@media screen and (max-width: 1000px) and (max-height: 740px) { 
+    .tablePEDiv{
+        position: absolute;
+        left: 1rem;
+        right: 1rem;
+        width: 95%;
+        overflow-y: auto;
+        height:  110vmin;
+        overflow-x: hidden;     
+    }
+}
+@media screen and (max-width: 1000px) and (max-height: 570px) { 
+    .tablePEDiv{
+        position: absolute;
+        left: 1rem;
+        right: 1rem;
+        width: 95%;
+        overflow-y: auto;
+        height:  80vmin;
+        overflow-x: hidden;     
+    }
+}
+@media screen and (width: 411px) and (height: 823px) { 
+    .tablePEDiv{
+        position: absolute;
+        left: 1rem;
+        right: 1rem;
+        width: 95%;
+        overflow-y: auto;
+        height:  130vmin;
+        overflow-x: hidden;     
+    }
+}  
+@media screen and (width: 768px) and (height: 1024px) { 
+    .tablePEDiv{
+        position: absolute;
+        left: 1rem;
+        right: 1rem;
+        width: 95%;
+        overflow-y: auto;
+        height:  80vmin;
+        overflow-x: hidden;     
+    }
+}              

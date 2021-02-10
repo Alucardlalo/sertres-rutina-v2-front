@@ -1,0 +1,300 @@
+.PDFBack{
+    background-color:white;
+    
+}
+.trBodyAA{
+    background-color: #1f1f9a;
+}
+.tdBodyAA{
+    color: white;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+.trBodyUPS{
+    background-color: orangered;
+}
+.tdBodyUPS{
+    color: white;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+.trBodyPE{
+    background-color: yellow;
+}
+.tdBodyPE{
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-weight: bold;
+}
+.btnDownload{
+    position: absolute;
+    top: -3.5rem;
+    left: 10rem;
+}
+/*Header*/
+
+.tableHeader{
+   width: 90%;
+   margin-left: 1rem;
+   margin-right: 1rem;
+   margin-top: 1rem;
+}
+
+.trHeader{
+    background-color: #1f1f9a;
+}
+.tdHeader1{
+    color: blue;
+    text-align: center;
+    font-size: 4rem;
+    padding-right: 10rem;
+}
+.LogoPDF{
+    vertical-align: center;
+    align-items: center;
+    position: relative;
+    padding-bottom: .5rem;
+    padding-top: .5rem;
+}
+.LogoImgPDF{
+    width: 25rem;
+    height: 4rem;
+}
+
+/*Body*/
+
+.tableBody{
+    width: 100%;
+    border: 1px solid gray;
+ }
+ 
+ .trBody1{
+     background-color: #1f1f9a;
+     
+ }
+ .trBody2{
+    align-items: center;
+    border-top: 1px solid gray;
+    width: 100%;
+    left: 1.3rem;
+    position: relative;
+ }
+ .tdheader2{
+     align-items: center;
+     text-align: center;
+     font-weight: 700;
+ }
+ 
+ .tdheader{
+    align-items: center;
+    text-align: center;
+}
+
+ .tdBody1{
+     color: white;
+     text-align: center;
+     position: relative;
+ }
+ .labelBody{
+     font-size: 1.5rem;
+     padding-left: 10px;
+     padding-top: 3px;
+     position: relative;
+ }
+
+ .tdAnswer{
+    padding-left: 1rem;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    font-size: 1.5rem;
+    width: 100%; 
+    position: relative;
+    text-align: center;
+ }
+
+.tableBodyQ{
+    border-left: 1px solid gray;
+  
+}
+
+.trQuestion{
+    border-bottom: 1px solid gray;
+    width: 100%;
+    position: relative;
+    width: 20%;
+}
+
+.tdQuestion{
+    position: relative;
+    padding-left: 3.5rem;
+    font-size: 1.5rem;
+    width: 70%;
+    font-weight: 700;
+}
+
+.tdQuestion1{
+    position: absolute;
+    border-right: 1px solid gray;
+    width: 2.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+/*Footer*/
+
+@media screen and (max-width: 1000px) {
+    .tdBodyAA{
+        color: white;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .trBodyUPS{
+        background-color: orangered;
+    }
+    .tdBodyUPS{
+        color: white;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .trBodyPE{
+        background-color: yellow;
+    }
+    .tdBodyPE{
+        color: black;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+    }
+    .btnDownload{
+        position: absolute;
+        top: -3.5rem;
+        left: 10rem;
+        visibility: hidden;
+    }
+    /*Header*/
+    
+    .tableHeader{
+       width: 90%;
+       margin-left: 1rem;
+       margin-right: 1rem;
+       margin-top: 1rem;
+    }
+    
+    .trHeader{
+        background-color: #1f1f9a;
+    }
+    .tdHeader1{
+        color: blue;
+        text-align: center;
+        font-size: 2rem;
+        padding-right: 10rem;
+    }
+    .Logo{
+        vertical-align: center;
+    }
+    
+    /*Body*/
+    
+    .tableBody{
+        width: 100%;
+        border: 1px solid gray;
+     }
+     
+     .trBody1{
+         background-color: #1f1f9a;
+         
+     }
+     .trBody2{
+        align-items: center;
+        border-top: 1px solid gray;
+        width: 100%;
+        left: 1.3rem;
+        position: relative;
+     }
+     .tdheader2{
+         align-items: center;
+         text-align: center;
+     }
+    
+     .tdBody1{
+         color: white;
+         text-align: center;
+         position: relative;
+     }
+     .labelBody{
+         font-size: 1rem;
+         padding-top: 3px;
+         position: relative;
+     }
+    
+     .tdAnswer{
+        border-left: 1px solid gray;
+        border-right: 1px solid gray;
+        font-size: 1.5rem;
+        width: 100%; 
+     }
+    
+    .tableBodyQ{
+        border-left: 1px solid gray;
+      
+    }
+    
+    .trQuestion{
+        border-bottom: 1px solid gray;
+        
+    }
+    
+    .tdQuestion{
+        position: relative;
+       
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+    .tdQuestion1{
+        position: relative;
+        border-right: 1px solid gray;
+       
+        font-size: 1.5rem;
+    }
+}
+
+.tableElaborado{
+    border:0px solid gray;
+    width: 100%;
+    position: relative; 
+}
+
+.trElaboradoA{
+   border: 1px solid gray;
+   width: 100%;
+}
+
+.trElaboradoB{
+   border-right: 1px solid gray;
+   border-bottom: 1px solid gray;
+   border-left: 1px solid gray;
+   width: 100%;
+}
+.elaborado{
+    position: relative;
+    font-size: 1.3rem;
+    font-weight: 700;
+    width: 20%;
+}
+
+.elaboradoFirma{
+    position: relative;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.nameElaborado{
+    font-size: 1.5rem;
+    width: 100%;
+    position: relative;
+}
+
+.FirmaElaborado{
+    font-size: 1rem;
+}

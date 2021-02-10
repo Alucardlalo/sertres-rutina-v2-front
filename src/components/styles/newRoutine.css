@@ -1,0 +1,29 @@
+@media screen and (min-width: 1000px) {
+    .titleNewRoutine{
+        padding-left: 2rem;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        font-size: 1.5rem;
+    }
+    .inputNewRoutine{
+        padding: 2rem;
+    }    
+        
+    }
+
+@media screen and (max-width: 1000px) {
+    .titleNewRoutine{
+        padding-left: 2rem;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        font-size: 1.5rem;
+    }
+    .inputNewRoutine{
+        padding: 2rem;
+        position: relative;
+        float: right;
+    } 
+    .tableNewReportType{
+        width: 100%;
+    } 
+    }    
