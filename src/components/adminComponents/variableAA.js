@@ -72,7 +72,7 @@ class variableAA extends React.Component{
     fetchUser = async () =>{
         this.setState({loadingF:true, errorF: null })
         try{
-            const response = await fetch('http://localhost:8090/sertresreporte/users/all')
+            const response = await fetch('http://localhost:8080/sertres-reporte-1.1/users/all')
             const Users = await response.json();
             this.setState({loadingF:false , usersF: Users })
             }catch(error){
@@ -132,7 +132,7 @@ class variableAA extends React.Component{
         this.setState({loading:true, error: null })
        
         try{
-            const response = await fetch('http://localhost:8090/sertresreporte/variable/reporttype/1')
+            const response = await fetch('http://localhost:8080/sertres-reporte-1.1/variable/reporttype/1')
             const variable = await response.json();
             this.setState({loading:false , variable: variable })
             var variableAUX = [];
@@ -157,7 +157,7 @@ class variableAA extends React.Component{
     SaveRoutine  = async e =>{
         axios({
             method: 'post',
-            url: 'http://localhost:8090/sertresreporte/reporte/save',
+            url: 'http://localhost:8080/sertres-reporte-1.1/reporte/save',
             data: {
                 "reportId": this.state.routineAA,
                 "reportTypeId": this.state.type,
@@ -187,7 +187,7 @@ class variableAA extends React.Component{
             body: JSON.stringify({ variableDataId:'', variableId: '1'  , reportId: this.state.inheritedRoutine, data: this.state.Q1})
         };
         
-        fetch('http://localhost:8090/sertresreporte/variabledata/save', requestOptionsQ1)
+        fetch('http://localhost:8080/sertres-reporte-1.1/variabledata/save', requestOptionsQ1)
             .then(response => response.json());
     }
 
@@ -198,7 +198,7 @@ class variableAA extends React.Component{
             body: JSON.stringify({ variableDataId: '', variableId: '2' , data: this.state.Q2 , reportId: this.state.inheritedRoutine})
         };
         
-        fetch('http://localhost:8090/sertresreporte/variabledata/save', requestOptionsQ2)
+        fetch('http://localhost:8080/sertres-reporte-1.1/variabledata/save', requestOptionsQ2)
             .then(response => response.json());
     }
     SaveQ3 (){
@@ -208,7 +208,7 @@ class variableAA extends React.Component{
             body: JSON.stringify({ variableDataId: '', variableId: '3' , data: this.state.Q3 , reportId: this.state.inheritedRoutine})
         };
         
-        fetch('http://localhost:8090/sertresreporte/variabledata/save', requestOptionsQ3)
+        fetch('http://localhost:8080/sertres-reporte-1.1/variabledata/save', requestOptionsQ3)
             .then(response => response.json());
     }
     SaveQ4 (){
@@ -218,7 +218,7 @@ class variableAA extends React.Component{
             body: JSON.stringify({ variableDataId: '', variableId: '4' , data: this.state.Q4 , reportId: this.state.inheritedRoutine})
         };
         
-        fetch('http://localhost:8090/sertresreporte/variabledata/save', requestOptionsQ4)
+        fetch('http://localhost:8080/sertres-reporte-1.1/variabledata/save', requestOptionsQ4)
             .then(response => response.json());
     }
     SaveQ5 (){
@@ -228,7 +228,7 @@ class variableAA extends React.Component{
             body: JSON.stringify({ variableDataId: '', variableId: '5' , data: this.state.Q5 , reportId: this.state.inheritedRoutine})
         };
         
-        fetch('http://localhost:8090/sertresreporte/variabledata/save', requestOptionsQ5)
+        fetch('http://localhost:8080/sertres-reporte-1.1/variabledata/save', requestOptionsQ5)
             .then(response => response.json());
     }
     SaveQ6 (){
@@ -238,7 +238,7 @@ class variableAA extends React.Component{
             body: JSON.stringify({ variableDataId: '', variableId: '6' , data: this.state.Q6 , reportId: this.state.inheritedRoutine})
         };
         
-        fetch('http://localhost:8090/sertresreporte/variabledata/save', requestOptionsQ6)
+        fetch('http://localhost:8080/sertres-reporte-1.1/variabledata/save', requestOptionsQ6)
             .then(response => response.json());
     }
     SaveQ7 (){
@@ -248,7 +248,7 @@ class variableAA extends React.Component{
             body: JSON.stringify({ variableDataId: '', variableId: '7' , data: this.state.Q7 , reportId: this.state.inheritedRoutine})
         };
         
-        fetch('http://localhost:8090/sertresreporte/variabledata/save', requestOptionsQ7)
+        fetch('http://localhost:8080/sertres-reporte-1.1/variabledata/save', requestOptionsQ7)
             .then(response => response.json());
     }
     SaveQ8 (){
@@ -258,7 +258,7 @@ class variableAA extends React.Component{
             body: JSON.stringify({ variableDataId: '', variableId: '8' , data: this.state.Q8 , reportId: this.state.inheritedRoutine})
         };
         
-        fetch('http://localhost:8090/sertresreporte/variabledata/save', requestOptionsQ8)
+        fetch('http://localhost:8080/sertres-reporte-1.1/variabledata/save', requestOptionsQ8)
             .then(response => response.json());
     }
     SaveQ9 (){
@@ -268,7 +268,7 @@ class variableAA extends React.Component{
             body: JSON.stringify({ variableDataId: '', variableId: '9' , data: this.state.Q9 , reportId: this.state.inheritedRoutine})
         };
         
-        fetch('http://localhost:8090/sertresreporte/variabledata/save', requestOptionsQ9)
+        fetch('http://localhost:8080/sertres-reporte-1.1/variabledata/save', requestOptionsQ9)
             .then(response => response.json());
     }
     SaveQ10 (){
@@ -278,7 +278,7 @@ class variableAA extends React.Component{
             body: JSON.stringify({ variableDataId: '', variableId: '10' , data: this.state.Q10 , reportId: this.state.inheritedRoutine})
         };
         
-        fetch('http://localhost:8090/sertresreporte/variabledata/save', requestOptionsQ10)
+        fetch('http://localhost:8080/sertres-reporte-1.1/variabledata/save', requestOptionsQ10)
             .then(response => response.json());
     }
     SaveQ11 (){
@@ -288,7 +288,7 @@ class variableAA extends React.Component{
             body: JSON.stringify({ variableDataId: '', variableId: '11' , data: this.state.Q11 , reportId: this.state.inheritedRoutine})
         };
         
-        fetch('http://localhost:8090/sertresreporte/variabledata/save', requestOptionsQ11)
+        fetch('http://localhost:8080/sertres-reporte-1.1/variabledata/save', requestOptionsQ11)
             .then(response => response.json());
     }
     SaveQ12 (){
@@ -298,7 +298,7 @@ class variableAA extends React.Component{
             body: JSON.stringify({ variableDataId: '', variableId: '12' , data: this.state.Q12 , reportId: this.state.inheritedRoutine})
         };
         
-        fetch('http://localhost:8090/sertresreporte/variabledata/save', requestOptionsQ12)
+        fetch('http://localhost:8080/sertres-reporte-1.1/variabledata/save', requestOptionsQ12)
             .then(response => response.json());
     }
     SaveQ13 (){
@@ -308,7 +308,7 @@ class variableAA extends React.Component{
             body: JSON.stringify({ variableDataId: '', variableId: '13' , data: this.state.Q13 , reportId: this.state.inheritedRoutine})
         };
         
-        fetch('http://localhost:8090/sertresreporte/variabledata/save', requestOptionsQ13)
+        fetch('http://localhost:8080/sertres-reporte-1.1/variabledata/save', requestOptionsQ13)
             .then(response => response.json());
     }
     SaveQ14 (){
@@ -318,7 +318,7 @@ class variableAA extends React.Component{
             body: JSON.stringify({ variableDataId: '', variableId: '14' , data: this.state.Q14 , reportId: this.state.inheritedRoutine})
         };
         
-        fetch('http://localhost:8090/sertresreporte/variabledata/save', requestOptionsQ14)
+        fetch('http://localhost:8080/sertres-reporte-1.1/variabledata/save', requestOptionsQ14)
             .then(response => response.json());
     }
     SaveQ15 (){
@@ -328,7 +328,7 @@ class variableAA extends React.Component{
             body: JSON.stringify({ variableDataId: '', variableId: '15' , data: this.state.Q15 , reportId: this.state.inheritedRoutine})
         };
         
-        fetch('http://localhost:8090/sertresreporte/variabledata/save', requestOptionsQ15)
+        fetch('http://localhost:8080/sertres-reporte-1.1/variabledata/save', requestOptionsQ15)
             .then(response => response.json());
     }
     SaveQ16 (){
@@ -338,7 +338,7 @@ class variableAA extends React.Component{
             body: JSON.stringify({ variableDataId: '', variableId: '16' , data: this.state.Q16 , reportId: this.state.inheritedRoutine})
         };
         
-        fetch('http://localhost:8090/sertresreporte/variabledata/save', requestOptionsQ16)
+        fetch('http://localhost:8080/sertres-reporte-1.1/variabledata/save', requestOptionsQ16)
             .then(response => response.json());
     }
     SaveQ17 (){
@@ -348,7 +348,7 @@ class variableAA extends React.Component{
             body: JSON.stringify({ variableDataId: '', variableId: '17' , data: this.state.Q17 , reportId: this.state.inheritedRoutine})
         };
         
-        fetch('http://localhost:8090/sertresreporte/variabledata/save', requestOptionsQ17)
+        fetch('http://localhost:8080/sertres-reporte-1.1/variabledata/save', requestOptionsQ17)
             .then(response => response.json());
     }
     SaveQ18 (){
@@ -358,7 +358,7 @@ class variableAA extends React.Component{
             body: JSON.stringify({ variableDataId: '', variableId: '18' , data: this.state.Q18 , reportId: this.state.inheritedRoutine})
         };
         
-        fetch('http://localhost:8090/sertresreporte/variabledata/save', requestOptionsQ18)
+        fetch('http://localhost:8080/sertres-reporte-1.1/variabledata/save', requestOptionsQ18)
             .then(response => response.json());
     }
     SaveQ19 (){
@@ -368,7 +368,7 @@ class variableAA extends React.Component{
             body: JSON.stringify({ variableDataId: '', variableId: '19' , data: this.state.Q19 , reportId: this.state.inheritedRoutine})
         };
         
-        fetch('http://localhost:8090/sertresreporte/variabledata/save', requestOptionsQ19)
+        fetch('http://localhost:8080/sertres-reporte-1.1/variabledata/save', requestOptionsQ19)
             .then(response => response.json());
     }
 

@@ -1,6 +1,7 @@
 {
   "name": "sertres-rutina-v2",
   "version": "0.1.0",
+  "homepage": ".",
   "private": true,
   "description": "Reporte Rutina Quincenal Sertres",
   "dependencies": {
@@ -49,7 +50,6 @@
       "not dead",
       "not op_mini all"
     ],
-    "homepage": ".",
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",

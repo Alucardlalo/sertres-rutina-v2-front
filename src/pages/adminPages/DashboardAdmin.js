@@ -31,7 +31,7 @@ class DashboardAdmin extends React.Component{
         this.setState({loading:true, error: null })
 
         try{
-            const response = await fetch('http://localhost:8090/sertresreporte/reporte/all')
+            const response = await fetch('http://localhost:8080/sertres-reporte-1.1/reporte/all')
             const reports = await response.json();
             this.setState({loading:false , reports: reports })
             /*creacion de grafica*/

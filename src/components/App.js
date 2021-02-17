@@ -16,7 +16,7 @@ import RoutineBodyTec from "../pages/TechnicalPages/RoutineBodyTec";
 export default class App extends React.Component {
     render() {
         return (
-            <BrowserRouter>
+            <hashRouter>
                 <Switch>
                     <Route exact path="/" component={LoginPage}/>
                     <Route exact path="/home" component={HomeAdmin}/>
@@ -30,7 +30,7 @@ export default class App extends React.Component {
                     <Route exact path="/RoutineBodyTec" component={RoutineBodyTec}/>
                     <Route component={notfound}/>
                 </Switch>
-            </BrowserRouter>
+            </hashRouter>
         );
     }
 }

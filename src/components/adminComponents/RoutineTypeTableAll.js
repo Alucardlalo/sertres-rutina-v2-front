@@ -24,7 +24,7 @@ class RoutineTypeTableAll extends React.Component{
         this.setState({loading:true, error: null })
 
         try{
-            const response = await fetch('http://localhost:8090/sertresreporte/reporttype/all')
+            const response = await fetch('http://localhost:8080/sertres-reporte-1.1/reporttype/all')
             const reportTypes = await response.json();
             this.setState({loading:false , reportTypes: reportTypes })
         }catch(error){

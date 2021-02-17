@@ -92,7 +92,7 @@ class RoutineTableAllTec extends React.Component{
         this.setState({loading:true, error: null })
        
         try{
-            const response = await fetch('http://localhost:8090/sertresreporte/reporte/all')
+            const response = await fetch('http://localhost:8080/sertres-reporte-1.1/reporte/all')
             const reports = await response.json();
             this.setState({loading:false , reports: reports })
         }catch(error){
@@ -101,8 +101,8 @@ class RoutineTableAllTec extends React.Component{
     }
 
     selectroutineA(e){
-        this.setState({selectRoutinebtn: false , routineselectId: 'http://localhost:8090/sertresreporte/reporte/'+ e.target.value})
-        this.setState({routineDataselectByReportId: 'http://localhost:8090/sertresreporte/variabledata/report/'+ e.target.value})
+        this.setState({selectRoutinebtn: false , routineselectId: 'http://localhost:8080/sertres-reporte-1.1/reporte/'+ e.target.value})
+        this.setState({routineDataselectByReportId: 'http://localhost:8080/sertres-reporte-1.1/variabledata/report/'+ e.target.value})
         this.fetchRoutineSelect();
         this.fetchRoutineDataSelect();
     }

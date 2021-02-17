@@ -60,7 +60,7 @@ class Login extends React.Component{
     fetchUser = async () =>{
         this.setState({loadingF:true, errorF: null })
         try{
-            const response = await fetch('http://localhost:8090/sertresreporte/users/all')
+            const response = await fetch('http://localhost:8080/sertres-reporte-1.1/users/all')
             const Users = await response.json();
             this.setState({loadingF:false , usersF: Users })
             //var auxiiares con los arrays
