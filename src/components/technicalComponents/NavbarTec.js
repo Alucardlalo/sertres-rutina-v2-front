@@ -1,8 +1,8 @@
 import React from 'react';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
-import {Redirect} from "react-router-dom";
-import Logo from '../common/LogoSertres.jpg';
-import LogoSm from '../common/LogoSertresSm.jpg';
+import {Redirect, Link} from "react-router-dom";
+import Logo from '../common/LogoSertres.jpg';//'../common/LogoSertres.jpg';
+import LogoSm from '../common/LogoSertresSm.jpg';//'../common/LogoSertresSm.jpg';
 import '../styles/Navbar.css';
 
 
@@ -45,15 +45,15 @@ class NavbarTec extends React.Component{
                             <span className="navbar-toggler-icon"></span>
                         </button>
                         <div className="collapse navbar-collapse" id="collapsibleNavbar">
-                            <ul className="navbar-nav">
+                        <ul className="navbar-nav">
                                 <li className="nav-item">
-                                    <a className="nav-link" href="/HomeTec">Dashboard</a>
+                                 <Link to="/HomeTec"><a className="nav-link">Dashboard</a></Link>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="/RoutineTec">Rutinas</a>
+                                   <Link to="/RoutineTec"><a className="nav-link">Rutinas</a></Link>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="/RoutinebodyTec">Contenido Rutinas</a>
+                                    <Link to="/RoutinebodyTec"><a className="nav-link">Contenido Rutinas</a></Link>
                                 </li>
                             </ul>
                             <img src={Logo} className="LogoImg"/> 

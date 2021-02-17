@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
-import {Redirect} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 import Logo from '../common/LogoSertres.jpg';
 import LogoSm from '../common/LogoSertresSm.jpg';
 import '../styles/Navbar.css';
@@ -46,16 +46,16 @@ class NavbarAdmin extends React.Component{
                         <div className="collapse navbar-collapse" id="collapsibleNavbar">
                             <ul className="navbar-nav">
                                 <li className="nav-item">
-                                    <a className="nav-link" href="/home">Dashboard</a>
+                                 <Link to="/home"><a className="nav-link">Dashboard</a></Link>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="/Routinetype">Tipo Rutina</a>
+                                   <Link to="/Routinetype"><a className="nav-link">Tipo Rutina</a></Link>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="/Routine">Rutinas</a>
+                                   <Link to="/Routine"><a className="nav-link">Rutinas</a></Link>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="/Routinebody">Contenido Rutinas</a>
+                                    <Link to="/Routinebody"><a className="nav-link">Contenido Rutinas</a></Link>
                                 </li>
                             </ul>
                             <img src={Logo} className="LogoImg"/>

@@ -2,6 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import '../styles/routineBody.css';
 import '../styles/ReportTypeTableAll.css';
+import { Link } from 'react-router-dom';
 
 class RoutineBodyTableAll extends React.Component{
 
@@ -126,9 +127,8 @@ class RoutineBodyTableAll extends React.Component{
                     <h3 className="tableName">Contenido de Reporte</h3>
                     <p className="tableName"></p>
                     
-                    <div className="row">
-                         <h6 className="col-9"></h6>   
-                         <a href="/Routinebody/new" className="buttons col-3"> Nuevo Campo</a>
+                    <div className="">   
+                         <Link to="/Routinebody/new"><a className="buttons"> Nuevo Campo</a></Link>
                         </div>
                         <div className="routineContentDiv">
                         <div className="table-responsive-sm">

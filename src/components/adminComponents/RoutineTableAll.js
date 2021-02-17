@@ -8,6 +8,7 @@ import '../styles/ReportTypeTableAll.css';
 import '../../global.css';
 import * as moment from "moment/moment";
 import Geolocation from '@react-native-community/geolocation';
+import { Link } from 'react-router-dom';
 
 class RoutineTableAll extends React.Component{
 
@@ -212,9 +213,8 @@ class RoutineTableAll extends React.Component{
                     <div className="ContenedorP">
                         <h3 className="tableName">Rutinas</h3>
                         <p className="tableName">Rutinas existentes</p>
-                        <div className="row">
-                         <h6 className="col-10"></h6>   
-                         <a href="/Routine/new" className="buttons col-2"> Nueva Rutina</a>
+                        <div className=""> 
+                        <Link to="/Routine/new"><a className="buttons"> Nueva Rutina</a></Link>
                         </div>
                         <div className="tableAllRoutine">
                             <table className="table table-dark">
