@@ -21,7 +21,7 @@ class NavbarAdmin extends React.Component{
             this.setState({loginN:false , logoutN:true })
         }
     }
-
+    
     render() {
         if(this.state.logoutN === true){
             return(<Redirect to="/" />)
@@ -46,16 +46,16 @@ class NavbarAdmin extends React.Component{
                         <div className="collapse navbar-collapse" id="collapsibleNavbar">
                             <ul className="navbar-nav">
                                 <li className="nav-item">
-                                 <Link to="/home"><a className="nav-link">Dashboard</a></Link>
+                                 <Link to="/home" className="nav-link">Dashboard</Link>
                                 </li>
                                 <li className="nav-item">
-                                   <Link to="/Routinetype"><a className="nav-link">Tipo Rutina</a></Link>
+                                   <Link to="/Routinetype" className="nav-link">Tipo Rutina</Link>
                                 </li>
                                 <li className="nav-item">
-                                   <Link to="/Routine"><a className="nav-link">Rutinas</a></Link>
+                                   <Link to="/Routine" className="nav-link">Rutinas</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link to="/Routinebody"><a className="nav-link">Contenido Rutinas</a></Link>
+                                    <Link to="/Routinebody" className="nav-link">Contenido Rutinas</Link>
                                 </li>
                             </ul>
                             <img src={Logo} className="LogoImg"/>
