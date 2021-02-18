@@ -11,6 +11,7 @@ import HomeAdmin from './adminComponents/HomeAdmin';
 import HomeTec from "./technicalComponents/HomeTec";
 import notfound from '../pages/NotFound';
 import RoutineBodyTec from "../pages/TechnicalPages/RoutineBodyTec";
+import NewRoutinebody from "../pages/adminPages/NewRoutinebody";
 
 
 export default class App extends React.Component {
@@ -28,6 +29,7 @@ export default class App extends React.Component {
                     <Route exact path="/Routine/new" component={NewRoutine}/>
                     <Route exact path="/RoutineBody" component={ReportBody}/>
                     <Route exact path="/RoutineBodyTec" component={RoutineBodyTec}/>
+                    <Route exact path= "/Routinebody/new" component={NewRoutinebody}/>
                     <Route component={notfound}/>
                 </Switch>
             </BrowserRouter>
