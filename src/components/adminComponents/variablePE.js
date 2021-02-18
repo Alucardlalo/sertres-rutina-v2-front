@@ -167,7 +167,8 @@ class VariablePE extends React.Component{
         this.SaveQ19();this.SaveQ20();this.SaveQ21();this.SaveQ22();this.SaveQ23();this.SaveQ24();
         this.SaveQ25();this.SaveQ26();this.SaveQ27();this.SaveQ28();this.SaveQ29();this.SaveQ30();
         this.SaveQ31();this.SaveQ32();this.SaveQ33();this.SaveRoutine();
-        window.location.reload(true);
+        alert('Reporte rutina creado');
+        window.location = "/Routine";
     }
 
     SaveRoutine  = async e =>{

@@ -156,7 +156,8 @@ class VariableUPS extends React.Component{
         this.SaveQ13();this.SaveQ14();this.SaveQ15();this.SaveQ16();this.SaveQ17();this.SaveQ18();
         this.SaveQ19();this.SaveQ20();this.SaveQ21();this.SaveQ22();this.SaveQ23();this.SaveQ24();
         this.SaveQ25();this.SaveQ26();this.SaveRoutine();
-        window.location.reload(true);
+        alert('Reporte rutina creado');
+        window.location = "/Routine";
     }
 
     SaveRoutine  = async e =>{

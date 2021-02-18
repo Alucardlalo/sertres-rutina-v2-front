@@ -151,7 +151,8 @@ class variableAA extends React.Component{
         this.SaveQ7();this.SaveQ8();this.SaveQ9();this.SaveQ10();this.SaveQ11();this.SaveQ12();
         this.SaveQ13();this.SaveQ14();this.SaveQ15();this.SaveQ16();this.SaveQ17();this.SaveQ18();
         this.SaveQ19();this.SaveRoutine();
-        window.location.reload(true);
+        alert('Reporte rutina creado');
+        window.location = "/Routine";
     }
 
     SaveRoutine  = async e =>{
