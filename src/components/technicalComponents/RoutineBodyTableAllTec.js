@@ -16,6 +16,7 @@ class RoutineBodyTableAllTec extends React.Component{
             reportTypes : [],
             reportType: '',
             isSelected: false,
+            serverDir: 'http://localhost:8080/sertresreporte',
 
         }
         this.handleClick = this.handleClick.bind(this);
@@ -56,7 +57,7 @@ class RoutineBodyTableAllTec extends React.Component{
         this.setState({loading:true, error: null, })
 
         try{
-            const response = await fetch('http://localhost:8080/sertres-reporte-1.1/reporttype/all')
+            const response = await fetch(this.state.serverDir + '/reporttype/all')
             const reportTypes = await response.json();
             this.setState({loading:false , reportTypes: reportTypes })
         }catch(error){
@@ -72,7 +73,7 @@ class RoutineBodyTableAllTec extends React.Component{
         this.setState({loading:true, error: null })
 
         try{
-            const response = await fetch('http://localhost:8080/sertres-reporte-1.1/variable/all')
+            const response = await fetch(this.state.serverDir + '/variable/all')
             const reportsBody = await response.json();
             this.setState({loading:false , reportsBody: reportsBody , reportsBodyAux:reportsBody})
         }catch(error){

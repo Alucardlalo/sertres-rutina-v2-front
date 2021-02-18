@@ -15,7 +15,8 @@ class Login extends React.Component{
             UserStringF : [],
             userPotP: [],
             accessUs: [],
-            accessUsAux: ''
+            accessUsAux: '',
+            serverDir: 'http://localhost:8080/sertresreporte',
         }
         this.handleLogin = this.handleLogin.bind(this);
         this.onChange = this.onChange.bind(this);
@@ -60,7 +61,7 @@ class Login extends React.Component{
     fetchUser = async () =>{
         this.setState({loadingF:true, errorF: null })
         try{
-            const response = await fetch('http://localhost:8080/sertres-reporte-1.1/users/all')
+            const response = await fetch(this.state.serverDir + '/users/all')
             const Users = await response.json();
             this.setState({loadingF:false , usersF: Users })
             //var auxiiares con los arrays
@@ -68,7 +69,7 @@ class Login extends React.Component{
             this.state.usersF.map((item) =>{
                 userString.push(item.user);
                 UserPot.push(item.pass);
-                access.push(item.accessLevelRel.accessLevelId);
+                access.push(item.accessLevel? item.accessLevelRel.accessLevelId : 3);
             })
             this.setState({UserStringF:userString, userPotP: UserPot, accessUs:access });
         }catch(error){

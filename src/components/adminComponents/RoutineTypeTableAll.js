@@ -13,6 +13,7 @@ class RoutineTypeTableAll extends React.Component{
             reportTypes : [],
             loading: true,
             error: null,
+            serverDir: 'http://localhost:8080/sertresreporte',
         }
     }
 
@@ -25,7 +26,7 @@ class RoutineTypeTableAll extends React.Component{
         this.setState({loading:true, error: null })
 
         try{
-            const response = await fetch('http://localhost:8080/sertres-reporte-1.1/reporttype/all')
+            const response = await fetch(this.state.serverDir + '/reporttype/all')
             const reportTypes = await response.json();
             this.setState({loading:false , reportTypes: reportTypes })
         }catch(error){

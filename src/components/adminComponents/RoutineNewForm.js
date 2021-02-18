@@ -25,6 +25,7 @@ class RoutineNewForm extends React.Component{
             deviceList:[],
             loading: true,
             error: null,
+            serverDir: 'http://localhost:8080/sertresreporte',
 
         }
     }
@@ -53,7 +54,7 @@ class RoutineNewForm extends React.Component{
                 this.state.status !== ""){
                     axios({
                         method: 'post',
-                        url: 'http://localhost:8080/sertres-reporte-1.1/reporte/save',
+                        url: this.state.serverDir + '/reporte/save',
                         data: {
                             "reportTypeId": this.state.reportTypeId,
                             "deviceId": this.state.deviceId,
@@ -101,7 +102,7 @@ class RoutineNewForm extends React.Component{
         this.setState({loading:true, error: null, })
 
         try{
-            const response = await fetch('http://localhost:8080/sertres-reporte-1.1/reporte/status/all')
+            const response = await fetch(this.state.serverDir + '/reporte/status/all')
             const reportStatusPR = await response.json();
             this.setState({loading:false , reportStatusA: reportStatusPR })
         }catch(error){
@@ -113,7 +114,7 @@ class RoutineNewForm extends React.Component{
         this.setState({loading:true, error: null, })
 
         try{
-            const response = await fetch('http://localhost:8080/sertres-reporte-1.1/dispositivo/all')
+            const response = await fetch(this.state.serverDir + '/dispositivo/all')
             const DevicePR = await response.json();
             this.setState({loading:false , deviceList: DevicePR })
         }catch(error){
@@ -125,7 +126,7 @@ class RoutineNewForm extends React.Component{
         this.setState({loading:true, error: null, })
 
         try{
-            const response = await fetch('http://localhost:8080/sertres-reporte-1.1/reporttype/all')
+            const response = await fetch(this.state.serverDir + '/reporttype/all')
             const reportTypePR = await response.json();
             this.setState({loading:false , reportTypeA: reportTypePR })
         }catch(error){
