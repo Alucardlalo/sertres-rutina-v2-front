@@ -2,7 +2,7 @@ import React from 'react';
 import axios from "axios";
 import '../styles/newRoutine.css';
 import * as moment from "moment/moment";
-import { Redirect } from 'react-router-dom';
+import { Redirect , Link } from 'react-router-dom';
 
 class RoutineNewForm extends React.Component{
 
@@ -69,7 +69,8 @@ class RoutineNewForm extends React.Component{
                         }
                       });
                     alert('Rutina creada');
-                    window.location.reload(true);
+                  this.setState({createdNew:true})
+                  
                     
                 }else if(this.state.reportTypeId == ""){
                     var tipo = "El tipo de rutina no puede ser vacio \n" 
@@ -203,18 +204,7 @@ class RoutineNewForm extends React.Component{
                                         className="btn btn-outline-info"/>
                                         </td>
                                 </tr>
-                                
-                                {/* <tr>
-                                    <td className="titleNewRoutine">Fecha Fin</td>
-                                    <td className="inputNewRoutine">
-                                        <input
-                                            type="date"
-                                            name="endDate"
-                                            value={endDate} onChange={this.changeHadler}
-                                            className="btn btn-outline-info"/>
-                                    </td>
-                                </tr> */}
-                                
+                        
                                 <tr>
                                     <td className="titleNewRoutine">Status</td>
                                     <td className="inputNewRoutine">
@@ -240,7 +230,7 @@ class RoutineNewForm extends React.Component{
             </React.Fragment>
         )}
         if(this.state.createdNew === true){
-            return (<Redirect to="/Routine"/>);
+            return (<Link to="/Routine"/>);
         }
     }
 }
