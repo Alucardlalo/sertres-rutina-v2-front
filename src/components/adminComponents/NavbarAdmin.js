@@ -46,16 +46,16 @@ class NavbarAdmin extends React.Component{
                         <div className="collapse navbar-collapse" id="collapsibleNavbar">
                             <ul className="navbar-nav">
                                 <li className="nav-item">
-                                 <Link to="/home" className="nav-link" onClick={() => window.location = "/home"}>Dashboard</Link>
+                                 <Link to="/home" className="nav-link" >Dashboard</Link>
                                 </li>
                                 <li className="nav-item">
-                                   <Link to="/Routinetype" className="nav-link" onClick={() => window.location = "/Routinetype"}>Tipo Rutina</Link>
+                                   <Link to="/Routinetype" className="nav-link" >Tipo Rutina</Link>
                                 </li>
                                 <li className="nav-item">
-                                   <Link to="/Routine" className="nav-link" onClick={() => window.location = "/Routine"}>Rutinas</Link>
+                                   <Link to="/Routine" className="nav-link" >Rutinas</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link to="/Routinebody" className="nav-link" onClick={() => window.location = "/Routinebody"}>Contenido Rutinas</Link>
+                                    <Link to="/Routinebody" className="nav-link" >Contenido Rutinas</Link>
                                 </li>
                             </ul>
                             <img src={Logo} className="LogoImg"/>

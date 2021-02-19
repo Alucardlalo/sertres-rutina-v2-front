@@ -47,13 +47,13 @@ class NavbarTec extends React.Component{
                         <div className="collapse navbar-collapse" id="collapsibleNavbar">
                         <ul className="navbar-nav">
                                 <li className="nav-item">
-                                 <Link to="/HomeTec" className="nav-link" onClick={() => window.location = "/HomeTec"}>Dashboard</Link>
+                                 <Link to="/HomeTec" className="nav-link">Dashboard</Link>
                                 </li>
                                 <li className="nav-item">
-                                   <Link to="/RoutineTec" className="nav-link" onClick={() => window.location = "/RoutineTec"}>Rutinas</Link>
+                                   <Link to="/RoutineTec" className="nav-link">Rutinas</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link to="/RoutinebodyTec" className="nav-link" onClick={() => window.location = "/RoutinebodyTec"}>Contenido Rutinas</Link>
+                                    <Link to="/RoutinebodyTec" className="nav-link">Contenido Rutinas</Link>
                                 </li>
                             </ul>
                             <img src={Logo} className="LogoImg"/> 
