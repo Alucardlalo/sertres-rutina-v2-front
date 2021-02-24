@@ -12,7 +12,7 @@ class routineTypeNewForm extends React.Component{
             reportType: '',
             descriptionI : '',
             createdNew: false,
-            serverDir: 'http://localhost:8080/sertresreporte',
+            
         }
     }
 
@@ -28,7 +28,7 @@ class routineTypeNewForm extends React.Component{
             body: JSON.stringify({ reportTypeId: '', reportType: this.state.reportType , descriptionI:this.state.descriptionI})
         };
         console.log(requestOptions)
-        fetch(this.state.serverDir + '/reporttype/save', requestOptions)
+        fetch(window.config.servidor + '/reporttype/save', requestOptions)
             .then(response => response.json());
             alert('Tipo Rutina creada');
             this.setState({createdNew:true});

@@ -2,6 +2,7 @@ import React from "react";
 import './styles/Login.css';
 import {Redirect} from "react-router-dom";
 
+
 class Login extends React.Component{
     constructor(props) {
         super(props);
@@ -16,7 +17,6 @@ class Login extends React.Component{
             userPotP: [],
             accessUs: [],
             accessUsAux: '',
-            serverDir: 'http://localhost:8080/sertresreporte',
         }
         this.handleLogin = this.handleLogin.bind(this);
         this.onChange = this.onChange.bind(this);
@@ -61,7 +61,7 @@ class Login extends React.Component{
     fetchUser = async () =>{
         this.setState({loadingF:true, errorF: null })
         try{
-            const response = await fetch(this.state.serverDir + '/users/all')
+            const response = await fetch(window.config.servidor + '/users/all')
             const Users = await response.json();
             this.setState({loadingF:false , usersF: Users })
             //var auxiiares con los arrays

@@ -19,7 +19,7 @@ class AAPDF extends React.Component{
           nameCre:'',mailCre:'',
           idcreated: this.props.createdById,
           AA:false,UPS:false,PE:false,
-          serverDir: 'http://localhost:8080/sertresreporte',
+          
         }
         
     }
@@ -41,7 +41,7 @@ class AAPDF extends React.Component{
     fetchReportBodyAA = async () =>{
         this.setState({loading:true, error: null })
             try{
-                const response = await fetch(this.state.serverDir + '/variable/reporttype/1')
+                const response = await fetch(window.config.servidor + '/variable/reporttype/1')
                 const reportsBody = await response.json();
                 this.setState({loading:false , Question: reportsBody })
             }catch(error){
@@ -52,7 +52,7 @@ class AAPDF extends React.Component{
     fetchReportBodyUPS = async () =>{
         this.setState({loading:true, error: null })
             try{
-                const response = await fetch(this.state.serverDir + '/variable/reporttype/2')
+                const response = await fetch(window.config.servidor + '/variable/reporttype/2')
                 const reportsBody = await response.json();
                 this.setState({loading:false , Question: reportsBody })
             }catch(error){
@@ -63,7 +63,7 @@ class AAPDF extends React.Component{
     fetchReportBodyPE = async () =>{
         this.setState({loading:true, error: null })
             try{
-                const response = await fetch(this.state.serverDir + '/variable/reporttype/3')
+                const response = await fetch(window.config.servidor + '/variable/reporttype/3')
                 const reportsBody = await response.json();
                 this.setState({loading:false , Question: reportsBody })
             }catch(error){

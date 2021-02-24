@@ -18,7 +18,7 @@ class DashboarTec extends React.Component{
             coloresA:[],
             dataA:[],
             opcionesA: {},
-            serverDir: 'http://localhost:8080/sertresreporte',
+            
         }
     }
 
@@ -32,7 +32,7 @@ class DashboarTec extends React.Component{
         this.setState({loading:true, error: null })
 
         try{
-            const response = await fetch(this.state.serverDir + '/reporte/all')
+            const response = await fetch(window.config.servidor + '/reporte/all')
             const reports = await response.json();
             this.setState({loading:false , reports: reports })
             /*creacion de grafica*/

@@ -34,7 +34,7 @@ class VariableUPS extends React.Component{
             Q1: moment(new Date()).format("DD/MM/YYYY hh:mm:ss"),Q2: '',Q3: '',Q4: '',Q5: '',Q6: '',Q7: '',Q8: '',Q9: '',Q10: '',
             Q11: '',Q12: '',Q13: '',Q14: '',Q15: '',Q16: '',Q17: '',Q18: '',Q19: '',
             Q20: '',Q21: '',Q22: '',Q23: '',Q24: '',Q25: '',Q26: '',
-            serverDir: 'http://localhost:8080/sertresreporte',
+            
         }
         
     }
@@ -68,7 +68,7 @@ class VariableUPS extends React.Component{
     fetchUser = async () =>{
         this.setState({loadingF:true, errorF: null })
         try{
-            const response = await fetch(this.state.serverDir + '/users/all')
+            const response = await fetch(window.config.servidor + '/users/all')
             const Users = await response.json();
             this.setState({loadingF:false , usersF: Users })
             }catch(error){
@@ -135,7 +135,7 @@ class VariableUPS extends React.Component{
         this.setState({loading:true, error: null })
        
         try{
-            const response = await fetch(this.state.serverDir + '/variable/reporttype/2')
+            const response = await fetch(window.config.servidor + '/variable/reporttype/2')
             const variable = await response.json();
             this.setState({loading:false , variable: variable })
             var variableAUX = [];
@@ -163,7 +163,7 @@ class VariableUPS extends React.Component{
     SaveRoutine  = async e =>{
         axios({
             method: 'post',
-            url: this.state.serverDir + '/reporte/save',
+            url: window.config.servidor + '/reporte/save',
             data: {
                 "reportId": this.state.routineAA,
                 "reportTypeId": this.state.type,
@@ -192,7 +192,7 @@ class VariableUPS extends React.Component{
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ variableDataId:'', variableId: '20' , data: this.state.Q1 , reportId: this.state.inheritedRoutine})
         };
-        fetch(this.state.serverDir + '/variabledata/save', requestOptions1)
+        fetch(window.config.servidor + '/variabledata/save', requestOptions1)
             .then(response => response.json());
     }
 
@@ -202,7 +202,7 @@ class VariableUPS extends React.Component{
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ variableDataId:'', variableId: '21' , data: this.state.Q2 , reportId: this.state.inheritedRoutine})
         };
-        fetch(this.state.serverDir + '/variabledata/save', requestOptions2)
+        fetch(window.config.servidor + '/variabledata/save', requestOptions2)
             .then(response => response.json());
     }
     SaveQ3 (){
@@ -211,7 +211,7 @@ class VariableUPS extends React.Component{
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ variableDataId:'', variableId: '22' , data: this.state.Q3 , reportId: this.state.inheritedRoutine})
         };
-        fetch(this.state.serverDir + '/variabledata/save', requestOptions1)
+        fetch(window.config.servidor + '/variabledata/save', requestOptions1)
             .then(response => response.json());
     }
     SaveQ4 (){
@@ -220,7 +220,7 @@ class VariableUPS extends React.Component{
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ variableDataId:'', variableId: '23' , data: this.state.Q4 , reportId: this.state.inheritedRoutine})
         };
-        fetch(this.state.serverDir + '/variabledata/save', requestOptions1)
+        fetch(window.config.servidor + '/variabledata/save', requestOptions1)
             .then(response => response.json());
     }
     SaveQ5 (){
@@ -229,7 +229,7 @@ class VariableUPS extends React.Component{
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ variableDataId:'', variableId: '24' , data: this.state.Q5 , reportId: this.state.inheritedRoutine})
         };
-        fetch(this.state.serverDir + '/variabledata/save', requestOptions1)
+        fetch(window.config.servidor + '/variabledata/save', requestOptions1)
             .then(response => response.json());
     }
     SaveQ6 (){
@@ -238,7 +238,7 @@ class VariableUPS extends React.Component{
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ variableDataId:'', variableId: '25' , data: this.state.Q6 , reportId: this.state.inheritedRoutine})
         };
-        fetch(this.state.serverDir + '/variabledata/save', requestOptions1)
+        fetch(window.config.servidor + '/variabledata/save', requestOptions1)
             .then(response => response.json());
     }
     SaveQ7 (){
@@ -247,7 +247,7 @@ class VariableUPS extends React.Component{
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ variableDataId:'', variableId: '26' , data: this.state.Q7 , reportId: this.state.inheritedRoutine})
         };
-        fetch(this.state.serverDir + '/variabledata/save', requestOptions1)
+        fetch(window.config.servidor + '/variabledata/save', requestOptions1)
             .then(response => response.json());
     }
     SaveQ8 = async e =>{
@@ -256,7 +256,7 @@ class VariableUPS extends React.Component{
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ variableDataId:'', variableId: '27' , data: this.state.Q8 , reportId: this.state.inheritedRoutine})
         };
-        fetch(this.state.serverDir + '/variabledata/save', requestOptions1)
+        fetch(window.config.servidor + '/variabledata/save', requestOptions1)
             .then(response => response.json());
     }
     SaveQ9 (){
@@ -265,7 +265,7 @@ class VariableUPS extends React.Component{
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ variableDataId:'', variableId: '28' , data: this.state.Q9 , reportId: this.state.inheritedRoutine})
         };
-        fetch(this.state.serverDir + '/variabledata/save', requestOptions1)
+        fetch(window.config.servidor + '/variabledata/save', requestOptions1)
             .then(response => response.json());
     }
     SaveQ10 (){
@@ -274,7 +274,7 @@ class VariableUPS extends React.Component{
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ variableDataId:'', variableId: '29' , data: this.state.Q10 , reportId: this.state.inheritedRoutine})
         };
-        fetch(this.state.serverDir + '/variabledata/save', requestOptions1)
+        fetch(window.config.servidor + '/variabledata/save', requestOptions1)
             .then(response => response.json());
     }
     SaveQ11(){
@@ -283,7 +283,7 @@ class VariableUPS extends React.Component{
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ variableDataId:'', variableId: '30' , data: this.state.Q11 , reportId: this.state.inheritedRoutine})
         };
-        fetch(this.state.serverDir + '/variabledata/save', requestOptions1)
+        fetch(window.config.servidor + '/variabledata/save', requestOptions1)
             .then(response => response.json());
     }
     SaveQ12 (){
@@ -292,7 +292,7 @@ class VariableUPS extends React.Component{
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ variableDataId:'', variableId: '31' , data: this.state.Q12 , reportId: this.state.inheritedRoutine})
         };
-        fetch(this.state.serverDir + '/variabledata/save', requestOptions1)
+        fetch(window.config.servidor + '/variabledata/save', requestOptions1)
             .then(response => response.json());
     }
     SaveQ13 (){
@@ -301,7 +301,7 @@ class VariableUPS extends React.Component{
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ variableDataId:'', variableId: '32' , data: this.state.Q13 , reportId: this.state.inheritedRoutine})
         };
-        fetch(this.state.serverDir + '/variabledata/save', requestOptions1)
+        fetch(window.config.servidor + '/variabledata/save', requestOptions1)
             .then(response => response.json());
     }
     SaveQ14 (){
@@ -310,7 +310,7 @@ class VariableUPS extends React.Component{
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ variableDataId:'', variableId: '33' , data: this.state.Q14 , reportId: this.state.inheritedRoutine})
         };
-        fetch(this.state.serverDir + '/variabledata/save', requestOptions1)
+        fetch(window.config.servidor + '/variabledata/save', requestOptions1)
             .then(response => response.json());
     }
     SaveQ15 (){
@@ -319,7 +319,7 @@ class VariableUPS extends React.Component{
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ variableDataId:'', variableId: '34' , data: this.state.Q15 , reportId: this.state.inheritedRoutine})
         };
-        fetch(this.state.serverDir + '/variabledata/save', requestOptions1)
+        fetch(window.config.servidor + '/variabledata/save', requestOptions1)
             .then(response => response.json());
     }
     SaveQ16 (){
@@ -328,7 +328,7 @@ class VariableUPS extends React.Component{
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ variableDataId:'', variableId: '35' , data: this.state.Q16 , reportId: this.state.inheritedRoutine})
         };
-        fetch(this.state.serverDir + '/variabledata/save', requestOptions1)
+        fetch(window.config.servidor + '/variabledata/save', requestOptions1)
             .then(response => response.json());
     }
     SaveQ17 (){
@@ -337,7 +337,7 @@ class VariableUPS extends React.Component{
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ variableDataId:'', variableId: '36' , data: this.state.Q17 , reportId: this.state.inheritedRoutine})
         };
-        fetch(this.state.serverDir + '/variabledata/save', requestOptions1)
+        fetch(window.config.servidor + '/variabledata/save', requestOptions1)
             .then(response => response.json());
     }
     SaveQ18 (){
@@ -346,7 +346,7 @@ class VariableUPS extends React.Component{
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ variableDataId:'', variableId: '37' , data: this.state.Q18 , reportId: this.state.inheritedRoutine})
         };
-        fetch(this.state.serverDir + '/variabledata/save', requestOptions1)
+        fetch(window.config.servidor + '/variabledata/save', requestOptions1)
             .then(response => response.json());
     }
     SaveQ19 (){
@@ -355,7 +355,7 @@ class VariableUPS extends React.Component{
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ variableDataId:'', variableId: '38' , data: this.state.Q19 , reportId: this.state.inheritedRoutine})
         };
-        fetch(this.state.serverDir + '/variabledata/save', requestOptions1)
+        fetch(window.config.servidor + '/variabledata/save', requestOptions1)
             .then(response => response.json());
     }
     SaveQ20 (){
@@ -364,7 +364,7 @@ class VariableUPS extends React.Component{
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ variableDataId:'', variableId: '39' , data: this.state.Q20 , reportId: this.state.inheritedRoutine})
         };
-        fetch(this.state.serverDir + '/variabledata/save', requestOptions1)
+        fetch(window.config.servidor + '/variabledata/save', requestOptions1)
             .then(response => response.json());
     }
     SaveQ21 (){
@@ -373,7 +373,7 @@ class VariableUPS extends React.Component{
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ variableDataId:'', variableId: '40' , data: this.state.Q21 , reportId: this.state.inheritedRoutine})
         };
-        fetch(this.state.serverDir + '/variabledata/save', requestOptions1)
+        fetch(window.config.servidor + '/variabledata/save', requestOptions1)
             .then(response => response.json());
     }
     SaveQ22 (){
@@ -382,7 +382,7 @@ class VariableUPS extends React.Component{
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ variableDataId:'', variableId: '41' , data: this.state.Q22 , reportId: this.state.inheritedRoutine})
         };
-        fetch(this.state.serverDir + '/variabledata/save', requestOptions1)
+        fetch(window.config.servidor + '/variabledata/save', requestOptions1)
             .then(response => response.json());
     }
     SaveQ23 (){
@@ -391,7 +391,7 @@ class VariableUPS extends React.Component{
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ variableDataId:'', variableId: '42' , data: this.state.Q23 , reportId: this.state.inheritedRoutine})
         };
-        fetch(this.state.serverDir + '/variabledata/save', requestOptions1)
+        fetch(window.config.servidor + '/variabledata/save', requestOptions1)
             .then(response => response.json());
     }
     SaveQ24 (){
@@ -400,7 +400,7 @@ class VariableUPS extends React.Component{
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ variableDataId:'', variableId: '43' , data: this.state.Q24 , reportId: this.state.inheritedRoutine})
         };
-        fetch(this.state.serverDir + '/variabledata/save', requestOptions1)
+        fetch(window.config.servidor + '/variabledata/save', requestOptions1)
             .then(response => response.json());
     }
     SaveQ25(){
@@ -409,7 +409,7 @@ class VariableUPS extends React.Component{
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ variableDataId:'', variableId: '44' , data: this.state.Q25 , reportId: this.state.inheritedRoutine})
         };
-        fetch(this.state.serverDir + '/variabledata/save', requestOptions1)
+        fetch(window.config.servidor + '/variabledata/save', requestOptions1)
             .then(response => response.json());
     }
     SaveQ26 (){
@@ -418,7 +418,7 @@ class VariableUPS extends React.Component{
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ variableDataId:'', variableId: '45' , data: this.state.Q26 , reportId: this.state.inheritedRoutine})
         };
-        fetch(this.state.serverDir + '/variabledata/save', requestOptions1)
+        fetch(window.config.servidor + '/variabledata/save', requestOptions1)
             .then(response => response.json());
     }
     

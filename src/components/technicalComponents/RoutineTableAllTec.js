@@ -40,7 +40,7 @@ class RoutineTableAllTec extends React.Component{
             corden:[],
             inSite: false,
             distancia: '',
-            serverDir: 'http://localhost:8080/sertresreporte',
+            
 
         }
         this.selectroutineA = this.selectroutineA.bind(this);
@@ -93,7 +93,7 @@ class RoutineTableAllTec extends React.Component{
         this.setState({loading:true, error: null })
        
         try{
-            const response = await fetch(this.state.serverDir + '/reporte/all')
+            const response = await fetch(window.config.servidor + '/reporte/all')
             const reports = await response.json();
             this.setState({loading:false , reports: reports })
         }catch(error){
@@ -102,8 +102,8 @@ class RoutineTableAllTec extends React.Component{
     }
 
     selectroutineA(e){
-        this.setState({selectRoutinebtn: false , routineselectId: this.state.serverDir + '/reporte/'+ e.target.value})
-        this.setState({routineDataselectByReportId: this.state.serverDir + '/variabledata/report/'+ e.target.value})
+        this.setState({selectRoutinebtn: false , routineselectId: window.config.servidor + '/reporte/'+ e.target.value})
+        this.setState({routineDataselectByReportId: window.config.servidor + '/variabledata/report/'+ e.target.value})
         this.fetchRoutineSelect();
         this.fetchRoutineDataSelect();
     }

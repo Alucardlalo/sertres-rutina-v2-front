@@ -38,7 +38,7 @@ class variableAA extends React.Component{
             routineAA:[],
             Q1: moment(new Date()).format("DD/MM/YYYY hh:mm:ss"),Q2: '',Q3: '',Q4: '',Q5: '',Q6: '',Q7: '',Q8: '',Q9: '',Q10: '',
             Q11: '',Q12: '',Q13: '',Q14: '',Q15: '',Q16: '',Q17: '',Q18: '',Q19: '',
-            serverDir: 'http://localhost:8080/sertresreporte',
+            
         }
         
     }
@@ -72,7 +72,7 @@ class variableAA extends React.Component{
     fetchUser = async () =>{
         this.setState({loadingF:true, errorF: null })
         try{
-            const response = await fetch(this.state.serverDir + '/users/all')
+            const response = await fetch(window.config.servidor + '/users/all')
             const Users = await response.json();
             this.setState({loadingF:false , usersF: Users })
             }catch(error){
@@ -132,7 +132,7 @@ class variableAA extends React.Component{
         this.setState({loading:true, error: null })
        
         try{
-            const response = await fetch(this.state.serverDir + '/variable/reporttype/1')
+            const response = await fetch(window.config.servidor + '/variable/reporttype/1')
             const variable = await response.json();
             this.setState({loading:false , variable: variable })
             var variableAUX = [];
@@ -158,7 +158,7 @@ class variableAA extends React.Component{
     SaveRoutine  = async e =>{
         axios({
             method: 'post',
-            url: this.state.serverDir + '/reporte/save',
+            url: window.config.servidor + '/reporte/save',
             data: {
                 "reportId": this.state.routineAA,
                 "reportTypeId": this.state.type,
@@ -188,7 +188,7 @@ class variableAA extends React.Component{
             body: JSON.stringify({ variableDataId:'', variableId: '1'  , reportId: this.state.inheritedRoutine, data: this.state.Q1})
         };
         
-        fetch(this.state.serverDir + '/variabledata/save', requestOptionsQ1)
+        fetch(window.config.servidor + '/variabledata/save', requestOptionsQ1)
             .then(response => response.json());
     }
 
@@ -199,7 +199,7 @@ class variableAA extends React.Component{
             body: JSON.stringify({ variableDataId: '', variableId: '2' , data: this.state.Q2 , reportId: this.state.inheritedRoutine})
         };
         
-        fetch(this.state.serverDir + '/variabledata/save', requestOptionsQ2)
+        fetch(window.config.servidor + '/variabledata/save', requestOptionsQ2)
             .then(response => response.json());
     }
     SaveQ3 (){
@@ -209,7 +209,7 @@ class variableAA extends React.Component{
             body: JSON.stringify({ variableDataId: '', variableId: '3' , data: this.state.Q3 , reportId: this.state.inheritedRoutine})
         };
         
-        fetch(this.state.serverDir + '/variabledata/save', requestOptionsQ3)
+        fetch(window.config.servidor + '/variabledata/save', requestOptionsQ3)
             .then(response => response.json());
     }
     SaveQ4 (){
@@ -219,7 +219,7 @@ class variableAA extends React.Component{
             body: JSON.stringify({ variableDataId: '', variableId: '4' , data: this.state.Q4 , reportId: this.state.inheritedRoutine})
         };
         
-        fetch(this.state.serverDir + '/variabledata/save', requestOptionsQ4)
+        fetch(window.config.servidor + '/variabledata/save', requestOptionsQ4)
             .then(response => response.json());
     }
     SaveQ5 (){
@@ -229,7 +229,7 @@ class variableAA extends React.Component{
             body: JSON.stringify({ variableDataId: '', variableId: '5' , data: this.state.Q5 , reportId: this.state.inheritedRoutine})
         };
         
-        fetch(this.state.serverDir + '/variabledata/save', requestOptionsQ5)
+        fetch(window.config.servidor + '/variabledata/save', requestOptionsQ5)
             .then(response => response.json());
     }
     SaveQ6 (){
@@ -239,7 +239,7 @@ class variableAA extends React.Component{
             body: JSON.stringify({ variableDataId: '', variableId: '6' , data: this.state.Q6 , reportId: this.state.inheritedRoutine})
         };
         
-        fetch(this.state.serverDir + '/variabledata/save', requestOptionsQ6)
+        fetch(window.config.servidor + '/variabledata/save', requestOptionsQ6)
             .then(response => response.json());
     }
     SaveQ7 (){
@@ -249,7 +249,7 @@ class variableAA extends React.Component{
             body: JSON.stringify({ variableDataId: '', variableId: '7' , data: this.state.Q7 , reportId: this.state.inheritedRoutine})
         };
         
-        fetch(this.state.serverDir + '/variabledata/save', requestOptionsQ7)
+        fetch(window.config.servidor + '/variabledata/save', requestOptionsQ7)
             .then(response => response.json());
     }
     SaveQ8 (){
@@ -259,7 +259,7 @@ class variableAA extends React.Component{
             body: JSON.stringify({ variableDataId: '', variableId: '8' , data: this.state.Q8 , reportId: this.state.inheritedRoutine})
         };
         
-        fetch(this.state.serverDir + '/variabledata/save', requestOptionsQ8)
+        fetch(window.config.servidor + '/variabledata/save', requestOptionsQ8)
             .then(response => response.json());
     }
     SaveQ9 (){
@@ -269,7 +269,7 @@ class variableAA extends React.Component{
             body: JSON.stringify({ variableDataId: '', variableId: '9' , data: this.state.Q9 , reportId: this.state.inheritedRoutine})
         };
         
-        fetch(this.state.serverDir + '/variabledata/save', requestOptionsQ9)
+        fetch(window.config.servidor + '/variabledata/save', requestOptionsQ9)
             .then(response => response.json());
     }
     SaveQ10 (){
@@ -279,7 +279,7 @@ class variableAA extends React.Component{
             body: JSON.stringify({ variableDataId: '', variableId: '10' , data: this.state.Q10 , reportId: this.state.inheritedRoutine})
         };
         
-        fetch(this.state.serverDir + '/variabledata/save', requestOptionsQ10)
+        fetch(window.config.servidor + '/variabledata/save', requestOptionsQ10)
             .then(response => response.json());
     }
     SaveQ11 (){
@@ -289,7 +289,7 @@ class variableAA extends React.Component{
             body: JSON.stringify({ variableDataId: '', variableId: '11' , data: this.state.Q11 , reportId: this.state.inheritedRoutine})
         };
         
-        fetch(this.state.serverDir + '/variabledata/save', requestOptionsQ11)
+        fetch(window.config.servidor + '/variabledata/save', requestOptionsQ11)
             .then(response => response.json());
     }
     SaveQ12 (){
@@ -299,7 +299,7 @@ class variableAA extends React.Component{
             body: JSON.stringify({ variableDataId: '', variableId: '12' , data: this.state.Q12 , reportId: this.state.inheritedRoutine})
         };
         
-        fetch(this.state.serverDir + '/variabledata/save', requestOptionsQ12)
+        fetch(window.config.servidor + '/variabledata/save', requestOptionsQ12)
             .then(response => response.json());
     }
     SaveQ13 (){
@@ -309,7 +309,7 @@ class variableAA extends React.Component{
             body: JSON.stringify({ variableDataId: '', variableId: '13' , data: this.state.Q13 , reportId: this.state.inheritedRoutine})
         };
         
-        fetch(this.state.serverDir + '/variabledata/save', requestOptionsQ13)
+        fetch(window.config.servidor + '/variabledata/save', requestOptionsQ13)
             .then(response => response.json());
     }
     SaveQ14 (){
@@ -319,7 +319,7 @@ class variableAA extends React.Component{
             body: JSON.stringify({ variableDataId: '', variableId: '14' , data: this.state.Q14 , reportId: this.state.inheritedRoutine})
         };
         
-        fetch(this.state.serverDir + '/variabledata/save', requestOptionsQ14)
+        fetch(window.config.servidor + '/variabledata/save', requestOptionsQ14)
             .then(response => response.json());
     }
     SaveQ15 (){
@@ -329,7 +329,7 @@ class variableAA extends React.Component{
             body: JSON.stringify({ variableDataId: '', variableId: '15' , data: this.state.Q15 , reportId: this.state.inheritedRoutine})
         };
         
-        fetch(this.state.serverDir + '/variabledata/save', requestOptionsQ15)
+        fetch(window.config.servidor + '/variabledata/save', requestOptionsQ15)
             .then(response => response.json());
     }
     SaveQ16 (){
@@ -339,7 +339,7 @@ class variableAA extends React.Component{
             body: JSON.stringify({ variableDataId: '', variableId: '16' , data: this.state.Q16 , reportId: this.state.inheritedRoutine})
         };
         
-        fetch(this.state.serverDir + '/variabledata/save', requestOptionsQ16)
+        fetch(window.config.servidor + '/variabledata/save', requestOptionsQ16)
             .then(response => response.json());
     }
     SaveQ17 (){
@@ -349,7 +349,7 @@ class variableAA extends React.Component{
             body: JSON.stringify({ variableDataId: '', variableId: '17' , data: this.state.Q17 , reportId: this.state.inheritedRoutine})
         };
         
-        fetch(this.state.serverDir + '/variabledata/save', requestOptionsQ17)
+        fetch(window.config.servidor + '/variabledata/save', requestOptionsQ17)
             .then(response => response.json());
     }
     SaveQ18 (){
@@ -359,7 +359,7 @@ class variableAA extends React.Component{
             body: JSON.stringify({ variableDataId: '', variableId: '18' , data: this.state.Q18 , reportId: this.state.inheritedRoutine})
         };
         
-        fetch(this.state.serverDir + '/variabledata/save', requestOptionsQ18)
+        fetch(window.config.servidor + '/variabledata/save', requestOptionsQ18)
             .then(response => response.json());
     }
     SaveQ19 (){
@@ -369,7 +369,7 @@ class variableAA extends React.Component{
             body: JSON.stringify({ variableDataId: '', variableId: '19' , data: this.state.Q19 , reportId: this.state.inheritedRoutine})
         };
         
-        fetch(this.state.serverDir + '/variabledata/save', requestOptionsQ19)
+        fetch(window.config.servidor + '/variabledata/save', requestOptionsQ19)
             .then(response => response.json());
     }
 
