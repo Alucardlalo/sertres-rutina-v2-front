@@ -50,6 +50,7 @@ class DashboarTec extends React.Component{
         }
     }
 
+ /* colores aleatorios
     generatedCharaterRdn(){
         var caracter = ["a","b","c","d","e","f","0","1","2","3","4","5","6","7","8","9",];
         var numero =(Math.random()*15).toFixed(0);
@@ -57,17 +58,19 @@ class DashboarTec extends React.Component{
     }
 
     colorRdn(){
-        var color = "";
-        for(var i=0; i<6;i++){
-            color = color + this.generatedCharaterRdn();
-        }
-        return "#" + color;
-    }
+     var color = "";
+     for(var i=0; i<6;i++){
+         color = color + this.generatedCharaterRdn();
+     }
+     return "#" + color;
+    } */
 
     generarcolores(){
         var colores = [];
         for (var i= 0; i<this.state.reports.length; i++){
-            colores.push(this.colorRdn());
+            //colores.push(this.colorRdn());
+            var colores = ['#a9e091', '#fa6565','#9abbc6','#e3cc5d','#bb99c2',
+            '#88ccd5','#7990d7','#dafa49','#ffac84','#c29696','#efb0fd'];
         }
         this.setState({coloresA : colores});
     }
