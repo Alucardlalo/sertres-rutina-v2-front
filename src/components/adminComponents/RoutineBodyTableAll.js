@@ -128,7 +128,7 @@ class RoutineBodyTableAll extends React.Component{
                     <p className="tableName"></p>
                     
                     <div className="">   
-                         <Link to="/Routinebody/new"><a className="buttons"> Nuevo Campo</a></Link>
+                      
                         </div>
                         <div className="routineContentDiv">
                         <div className="table-responsive-sm">

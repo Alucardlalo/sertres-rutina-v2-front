@@ -8,6 +8,7 @@ import '../styles/ReportTypeTableAll.css';
 import '../../global.css';
 import * as moment from "moment/moment";
 import Geolocation from '@react-native-community/geolocation';
+import { Link } from 'react-router-dom';
 
 class RoutineTableAllTec extends React.Component{
 
@@ -63,6 +64,12 @@ class RoutineTableAllTec extends React.Component{
             latEdi.push(cordEdi.deviceRel.buildingRel.buildingDataRel.buildingLatitude);
             longEdi.push(cordEdi.deviceRel.buildingRel.buildingDataRel.buildingLongitude);
         })
+
+        if(latUser == null && longUser == null){
+            latEdi.push(19.360406899999997);
+            longEdi.push(-99.1827586);
+            alert("sin cordenadas asignacion automatica a sertres tecoyotitla")
+        }
         
         const x = (latEdi - latUser);
         const y = (longEdi - longUser);
@@ -213,6 +220,9 @@ class RoutineTableAllTec extends React.Component{
                     <div className="ContenedorP">
                         <h3 className="tableName">Rutinas</h3>
                         <p className="tableName">Rutinas existentes</p>
+                       {/* <div className=""> 
+                        <Link to="/Routine/new"><a className="buttons"> Nueva Rutina</a></Link>
+                        </div>  */}
                         <div className="tableAllRoutine">
                             <table className="table table-dark">
                                 <thead>
@@ -259,6 +269,7 @@ class RoutineTableAllTec extends React.Component{
             const type = this.state.routineTypeS;
             const inSite = this.state.inSite;
             const distancia = this.state.distancia;
+            const cordena = this.state.corden;
             return(
                 <React.Fragment>
                    <div className="ContenedorP">
@@ -596,17 +607,17 @@ class RoutineTableAllTec extends React.Component{
                             <div>
                                {this.state.routineAA?
                                <div>
-                                   <VariableAA routine={routineId} status={statusRoutine} data={routineData} routineS={routineselectS} type={type} inSite={inSite} distancia={distancia}/>
+                                   <VariableAA routine={routineId} status={statusRoutine} data={routineData} routineS={routineselectS} type={type} inSite={inSite} distancia={distancia} corden={cordena}/>
                                </div>
                                :null}
                                {this.state.routineUPS?
                                <div>
-                                    <VariableUPS routine={routineId} status={statusRoutine} data={routineData} routineS={routineselectS} type={type} inSite={inSite} distancia={distancia}/>
+                                    <VariableUPS routine={routineId} status={statusRoutine} data={routineData} routineS={routineselectS} type={type} inSite={inSite} distancia={distancia} corden={cordena}/>
                                </div>
                                :null}
                                {this.state.routinePE?
                                <div>
-                                    <VariablePE routine={routineId} status={statusRoutine} data={routineData} routineS={routineselectS} type={type} inSite={inSite} distancia={distancia}/>
+                                    <VariablePE routine={routineId} status={statusRoutine} data={routineData} routineS={routineselectS} type={type} inSite={inSite} distancia={distancia} corden={cordena}/>
                                </div>
                                :null}
                             </div>

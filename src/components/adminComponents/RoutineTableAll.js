@@ -64,7 +64,11 @@ class RoutineTableAll extends React.Component{
             latEdi.push(cordEdi.deviceRel.buildingRel.buildingDataRel.buildingLatitude);
             longEdi.push(cordEdi.deviceRel.buildingRel.buildingDataRel.buildingLongitude);
         })
-        
+        if(this.state.corden == []){
+            latEdi.push(19.360406899999997);
+            longEdi.push(-99.1827586);
+            alert("sin cordenadas asignacion automatica a sertres tecoyotitla")
+        }
         const x = (latEdi - latUser);
         const y = (longEdi - longUser);
        

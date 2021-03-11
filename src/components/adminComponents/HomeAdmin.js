@@ -11,7 +11,7 @@ class HomeAdmin extends React.Component {
     return (
       <React.Fragment>
         <div className="One">
-           <NavbarAdmin />
+            <NavbarAdmin />
         </div>
 
         <div className="container-fluid">

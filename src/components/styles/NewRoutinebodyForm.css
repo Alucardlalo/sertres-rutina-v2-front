@@ -1,0 +1,24 @@
+/*pc*/
+@media screen and (min-width: 1000px) {
+    .OptionBtn{
+        position: absolute;
+        left: 35rem;
+        top:19vmin;
+    }
+    .btnOption1{
+        position: relative;
+        
+    }
+    .btnOption2{
+        position: relative;
+        left: 1rem;
+        
+    }
+}
+
+/*movil*/
+@media screen and (max-width: 1000px) {
+    .OptionBtn{
+
+    }
+}    
