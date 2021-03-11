@@ -6,10 +6,12 @@ import {useHistory} from "react-router-dom";
 import {useAppContext} from "../Utils/contextLib";
 import LoaderButton from "./LoaderButton";
 import './styles/Login.css';
+import pasar from "../Utils/Utils";
 
 export default function Login() {
     const {userHasAuthenticated} = useAppContext();
     const {userHasAuthenticatedTec} = useAppContext();
+    const {SetUrs} = useAppContext();
     const [user1, setUser1] = useState("");
     const [password, setPassword] = useState("");
     const [isLoading, setIsLoading] = useState(false);
@@ -31,26 +33,29 @@ export default function Login() {
             .then(res => res.json())
             .then(
                 (result) => {
-                    var userString = [], UserPot = [], access = [], asign = [];
+                    var userString = [], UserPot = [], access = [], asign = [], nameUrs=[];
                     result.map((item) => {
                         userString.push(item.user);
                         UserPot.push(item.pass);
                         access.push(item.accessLevel ? item.accessLevelRel.accessLevelId : 3);
                         asign.push(item.userId);
+                        nameUrs.push(item.userId);
+
                     })
                     const resultUser = userString.filter(user => user === user1)
                     let position = userString.indexOf(user1);
-                    console.log(userString + "   position  " + position + "  position del user  " + access[position])
-                    console.log("\n acceso  "+ access)
                     if (user1 == userString.filter(user => user === user1) && password == UserPot[position] && access[position] !== 3 ) {
                         userHasAuthenticated(true);
                         userHasAuthenticatedTec(false);
+                        SetUrs(nameUrs[position]);
+                        pasar(nameUrs[position]);
                         history.push("/home");
                     }
                     if (user1 == userString.filter(user => user === user1) &&  password == UserPot[position] && access[position] === 3 ) {
 
                         userHasAuthenticated(false);
                         userHasAuthenticatedTec(true);
+                        pasar(nameUrs[position]);
                         history.push("/homeTec");
                     }else {
                         setIsLoading(false);

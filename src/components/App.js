@@ -3,15 +3,14 @@ import React, {useState} from "react";
 import {useHistory} from "react-router-dom";
 
 import Routes from "./Routes";
-import {AppContext} from "../Utils/contextLib";
-import NavbarAdmin from "./adminComponents/NavbarAdmin";
-import NavbarTec from "./technicalComponents/NavbarTec";
+import {AppContext, useAppContext} from "../Utils/contextLib";
 
 
 
 function App() {
     const [isAuthenticated, userHasAuthenticated] = useState(false);
     const [isAuthenticatedTec, userHasAuthenticatedTec] = useState(false);
+    const [Urs, SetUrs] = useState('');
     const history = useHistory();
 
     if (!isAuthenticated) history.push('/');
@@ -25,8 +24,8 @@ function App() {
     return (
         <div className="App container-fluid py-3">
 
-            <AppContext.Provider value={{isAuthenticated, userHasAuthenticated ,isAuthenticatedTec, userHasAuthenticatedTec }}>
-                <Routes/>
+            <AppContext.Provider value={{isAuthenticated, userHasAuthenticated ,isAuthenticatedTec, userHasAuthenticatedTec, Urs, SetUrs }}>
+                <Routes UrsName={Urs}/>
             </AppContext.Provider>
         </div>
 

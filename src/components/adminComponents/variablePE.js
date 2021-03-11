@@ -29,6 +29,7 @@ class VariablePE extends React.Component{
             PDF:false,
             usersF:[],
             createdBy:'',
+            Urs:this.props.Urs,
             createdById:'',
             routineAA:[],
             routineTypeS: '',
@@ -168,7 +169,8 @@ class VariablePE extends React.Component{
         this.SaveQ25();this.SaveQ26();this.SaveQ27();this.SaveQ28();this.SaveQ29();this.SaveQ30();
         this.SaveQ31();this.SaveQ32();this.SaveQ33();this.SaveRoutine();
         alert('Reporte rutina creado');
-        window.location = "/Routine";
+
+
     }
 
     SaveRoutine  = async e =>{
@@ -185,7 +187,7 @@ class VariablePE extends React.Component{
                 "endDate": moment(new Date()),
                 "status": 1,
                 "reviewATM": false,
-                "createdBy": this.state.createdBy,
+                "createdBy": this.state.Urs,
                 "idCreated": this.state.createdById
             }
           });
@@ -1081,22 +1083,15 @@ class VariablePE extends React.Component{
                             < div class="w-100"></div>{/* octava linea de cuadro Rutina */}
                             
                             <div className="col-4 col-sm-4">
-                            <table className="AAData"> 
-                                    <tr>
+                            <table className="AAData">
+                                <tr>
                                     {this.state.statusActual?
                                         <td className="prestoAAC">Realizado por:</td>
-                                        :<td className="prestoAA">Realizado por:</td>}
-                                        {this.state.statusActual?
+                                        :null}
+                                    {this.state.statusActual?
                                         <td className="prestoAAResC ">{this.props.routineS.map((item)=>(item.userRel.userName))}</td>
-                                        :<td className="prestoAARes">
-                                         <select value={this.state.createdBy} onChange={this.changeHadler} className="btn btn-outline-info">
-                                        <option value={0}> </option>
-                                        {this.state.usersF.sort(({userId: previoususerId}, {userId:currentuserId})=> previoususerId - currentuserId).map((item) =>(
-                                            <option key={item.userId} value={item.userId}>{item.userName}</option>
-                                        ))}
-                                    </select>   
-                                       </td>}
-                                    </tr>
+                                        :null}
+                                </tr>
                                     </table> 
                             </div>
                             
@@ -1105,19 +1100,21 @@ class VariablePE extends React.Component{
                             <div className="w-100 ocultar-div"></div>
                             <div className="col-4 col-sm-4">
                             <table className="PEData">
-                            {this.state.statusActual? 
-                                    <tr>
-                                        <td><button className="btn btn-outline-success" disabled="true">Completo</button></td>  
-                                    </tr>
-                                 :this.state.inheritedInSite?
-                                 <tr>
-                                 <td><button className="btn btn-outline-info">Guardar</button></td>  
-                             </tr>
-                                 :<tr> 
-                                     <td><button className="btn btn-outline-warning" disabled="true">Deshabilitado</button></td>
-                                     <td className="text-warning">{' Estas a: ' + this.props.distancia + ' m del dispositivo. '}</td>    
-                                 </tr>}                                 
-                                </table>
+                            {this.state.statusActual?
+                                <tr>
+                                    <td><button className="btn btn-outline-success" disabled="true">Completo</button></td>
+                                </tr>
+                                :this.state.inheritedInSite?
+                                    !this.state.created?
+                                        <tr>
+                                            <td><button className="btn btn-outline-info">Guardar</button></td>
+                                        </tr>: <td><button className="btn btn-outline-success" disabled="true">Guardado completo</button></td>
+                                    :<tr>
+                                        <td><button className="btn btn-outline-warning" disabled="true">Deshabilitado</button></td>
+                                        <td className="text-warning">{' Estas a: ' + this.props.distancia + ' m del dispositivo. '}</td>
+
+                                    </tr>}
+                            </table>
                             </div>
                         </div>
                         </table>     

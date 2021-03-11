@@ -25,7 +25,8 @@ class VariableUPS extends React.Component{
             inheritedCord: this.props.corden,
             PDF:false,
             usersF:[],
-            createdBy:'',
+            created:false,
+            Urs:this.props.Urs,
             createdById:'',
             routineAA:[],
             inheritedInSite: this.props.inSite,
@@ -157,7 +158,7 @@ class VariableUPS extends React.Component{
         this.SaveQ19();this.SaveQ20();this.SaveQ21();this.SaveQ22();this.SaveQ23();this.SaveQ24();
         this.SaveQ25();this.SaveQ26();this.SaveRoutine();
         alert('Reporte rutina creado');
-        window.location = "/Routine";
+        this.setState({created:true})
     }
 
     SaveRoutine  = async e =>{
@@ -174,7 +175,7 @@ class VariableUPS extends React.Component{
                 "endDate": moment(new Date()),
                 "status": 1,
                 "reviewATM": false,
-                "createdBy": this.state.createdBy,
+                "createdBy": this.state.Urs,
                 "idCreated": this.state.createdById
             }
           });
@@ -896,22 +897,15 @@ class VariableUPS extends React.Component{
                             < div class="w-100"></div>{/* decima linea de cuadro Rutina */}
                             
                             <div className="col-4 col-sm-4">
-                            <table className="AAData"> 
-                                    <tr>
+                            <table className="AAData">
+                                <tr>
                                     {this.state.statusActual?
                                         <td className="prestoAAC">Realizado por:</td>
-                                        :<td className="prestoAA">Realizado por:</td>}
-                                        {this.state.statusActual?
+                                        :null}
+                                    {this.state.statusActual?
                                         <td className="prestoAAResC ">{this.props.routineS.map((item)=>(item.userRel.userName))}</td>
-                                        :<td className="prestoAARes">
-                                         <select value={this.state.createdBy} onChange={this.changeHadler} className="btn btn-outline-info">
-                                        <option value={0}> </option>
-                                        {this.state.usersF.sort(({userId: previoususerId}, {userId:currentuserId})=> previoususerId - currentuserId).map((item) =>(
-                                            <option key={item.userId} value={item.userId}>{item.userName}</option>
-                                        ))}
-                                    </select>   
-                                       </td>}
-                                    </tr>
+                                        :null}
+                                </tr>
                                     </table> 
                             </div>
 
@@ -925,9 +919,10 @@ class VariableUPS extends React.Component{
                                         <td><button className="btn btn-outline-success" disabled="true">Completo</button></td>  
                                     </tr>
                                  :this.state.inheritedInSite?
+                                    !this.state.created?
                                  <tr>
                                  <td><button className="btn btn-outline-info">Guardar</button></td>
-                             </tr>
+                             </tr>: <td><button className="btn btn-outline-success" disabled="true">Guardado completo</button></td>
                                  :<tr> 
                                      <td><button className="btn btn-outline-warning" disabled="true">Deshabilitado</button></td>
                                      <td className="text-warning">{' Estas a: ' + this.props.distancia + ' m del dispositivo. '}</td>    

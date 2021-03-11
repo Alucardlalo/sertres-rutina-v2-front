@@ -33,6 +33,7 @@ class variableAA extends React.Component{
             inheritedCord: this.props.corden,
             PDF:false,
             usersF:[],
+            Urs:this.props.Urs,
             createdBy:'',
             createdById:'',
             routineAA:[],
@@ -152,7 +153,7 @@ class variableAA extends React.Component{
         this.SaveQ13();this.SaveQ14();this.SaveQ15();this.SaveQ16();this.SaveQ17();this.SaveQ18();
         this.SaveQ19();this.SaveRoutine();
         alert('Reporte rutina creado');
-        window.location = "/Routine";
+
     }
 
     SaveRoutine  = async e =>{
@@ -169,7 +170,7 @@ class variableAA extends React.Component{
                 "endDate": moment(new Date()),
                 "status": 1,
                 "reviewATM": false,
-                "createdBy": this.state.createdBy,
+                "createdBy": this.state.Urs,
                 "idCreated": this.state.createdById
             }
           });
@@ -744,17 +745,10 @@ class variableAA extends React.Component{
                                     <tr>
                                     {this.state.statusActual?
                                         <td className="prestoAAC">Realizado por:</td>
-                                        :<td className="prestoAA">Realizado por:</td>}
+                                        :null}
                                         {this.state.statusActual?
                                         <td className="prestoAAResC ">{this.props.routineS.map((item)=>(item.userRel.userName))}</td>
-                                        :<td className="prestoAARes">
-                                         <select value={this.state.createdBy} onChange={this.changeHadler} className="btn btn-outline-info">
-                                        <option value={0}> </option>
-                                        {this.state.usersF.sort(({userId: previoususerId}, {userId:currentuserId})=> previoususerId - currentuserId).map((item) =>(
-                                            <option key={item.userId} value={item.userId}>{item.userName}</option>
-                                        ))}
-                                    </select>   
-                                       </td>}
+                                        :null}
                                     </tr>
                                     </table> 
                             </div>
@@ -764,20 +758,21 @@ class variableAA extends React.Component{
                             <div className="w-100 ocultar-div"></div>
                             <div className="col-12 col-sm-12">
                             <table className="AAData">
-                            {this.state.statusActual? 
-                                    <tr>
-                                        <td><button className="btn btn-outline-success" disabled="true">Completo</button></td>  
-                                    </tr>
-                                 :this.state.inheritedInSite?
-                                 <tr>
-                                 <td><button className="btn btn-outline-info">Guardar</button></td>  
-                             </tr>
-                                 :<tr> 
-                                     <td><button className="btn btn-outline-warning" disabled="true">Deshabilitado</button></td>
-                                     <td className="text-warning">{' Estas a: ' + this.props.distancia + ' m del dispositivo. '}</td>    
+                            {this.state.statusActual?
+                                <tr>
+                                    <td><button className="btn btn-outline-success" disabled="true">Completo</button></td>
+                                </tr>
+                                :this.state.inheritedInSite?
+                                    !this.state.created?
+                                        <tr>
+                                            <td><button className="btn btn-outline-info">Guardar</button></td>
+                                        </tr>: <td><button className="btn btn-outline-success" disabled="true">Guardado completo</button></td>
+                                    :<tr>
+                                        <td><button className="btn btn-outline-warning" disabled="true">Deshabilitado</button></td>
+                                        <td className="text-warning">{' Estas a: ' + this.props.distancia + ' m del dispositivo. '}</td>
 
-                                 </tr>}     
-                                </table>
+                                    </tr>}
+                            </table>
                             </div>
                         </div>     
                     </div>
