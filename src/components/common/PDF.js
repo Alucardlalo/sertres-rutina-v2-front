@@ -1,9 +1,10 @@
 import React, {Component, PropTypes} from 'react';
-import '../styles/PDFAA.css'
+import '../styles/PDF.css'
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import * as moment from "moment/moment";
 import Logo from './LogoSertres.jpg';
+import { Page, Document } from '@react-pdf/renderer';
 
 class AAPDF extends React.Component{
     constructor(props) {
@@ -115,11 +116,13 @@ class AAPDF extends React.Component{
         })}
         string = device.toString()+'_Date_' + date.toString() + '.pdf';
         const input = document.getElementById('pdfDown');
+
+
         html2canvas(input)
           .then((canvas) => {
             const imgData = canvas.toDataURL('image/png');
-            const pdf = new jsPDF();
-            pdf.addImage(imgData, 'JPEG', 3, 0,205,286);
+            const pdf = new jsPDF('mm', 'mm', [279, 210]);
+            pdf.addImage(imgData, 'JPEG', 8, 10,260,195);
             // pdf.output('dataurlnewwindow');
             pdf.save(string);
           })
@@ -129,18 +132,26 @@ class AAPDF extends React.Component{
     render(){
         return(
             <React.Fragment>
-              <div className="PDFBack" id="pdfDown">
+              <div className="PDFBack" >
                 <div className="container">
                 <div className="PDFHeader">
-                   <table className="tableHeader">
-                        <tr>
-                            <td className="LogoPDF"><img src={Logo} className="LogoImgPDF"/></td>
-                        </tr>
-                   </table>
-                   <button className="btn btn-outline-primary btnDownload" type="button" onClick={this.jsPDFGenerator}>
+                    {/* <button className="btn btn-outline-primary btnDownload" type="button" onClick={this.jsPDFGenerator}>
                        Descargar
-                   </button>
+                   </button> */}
             </div>
+
+                    {/*  principio de pdf  */}
+                <div id="pdfDown" className="">
+                    <Document><Page>
+
+                        <div className="PDFHeader">
+                            <table className="tableHeader">
+                                <tr>
+                                    <td className="LogoPDF"><img src="./rutinas/LogoSertres.jpg" className="LogoImgPDF"/></td>
+                                </tr>
+                            </table>
+                        </div>
+
                 <div className="PDFBody">
                 {this.state.routineS.map((item)=> (
                 <table className="tableBody">
@@ -218,6 +229,7 @@ class AAPDF extends React.Component{
                      ))}
                 </div>                
                 </div>
+
                 <br/>
                 <div className="PDFFoot">
                 <table className="tableElaborado">
@@ -250,6 +262,12 @@ class AAPDF extends React.Component{
                         </tr>
                     </table>
                 </div>
+
+                </Page>
+                </Document>
+                </div>
+                    {/* fin de pdf  */}
+
               </div>
               </div> 
             </React.Fragment>

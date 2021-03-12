@@ -28,7 +28,7 @@ class VariablePE extends React.Component{
             inheritedCord: this.props.corden,
             PDF:false,
             usersF:[],
-            createdBy:'',
+            created:false,
             Urs:this.props.Urs,
             createdById:'',
             routineAA:[],
@@ -169,7 +169,7 @@ class VariablePE extends React.Component{
         this.SaveQ25();this.SaveQ26();this.SaveQ27();this.SaveQ28();this.SaveQ29();this.SaveQ30();
         this.SaveQ31();this.SaveQ32();this.SaveQ33();this.SaveRoutine();
         alert('Reporte rutina creado');
-
+        this.setState({created:true})
 
     }
 

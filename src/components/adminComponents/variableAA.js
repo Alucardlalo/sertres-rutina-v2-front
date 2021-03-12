@@ -7,6 +7,7 @@ import '../../global.css';
 import '../styles/variableAA.css';
 import * as moment from "moment/moment";
 import PDF from '../common/PDF';
+import PDFViewer from 'pdf-viewer-reactjs'
 import axios from "axios";
 
 class variableAA extends React.Component{
@@ -34,7 +35,7 @@ class variableAA extends React.Component{
             PDF:false,
             usersF:[],
             Urs:this.props.Urs,
-            createdBy:'',
+            created:false,
             createdById:'',
             routineAA:[],
             Q1: moment(new Date()).format("DD/MM/YYYY hh:mm:ss"),Q2: '',Q3: '',Q4: '',Q5: '',Q6: '',Q7: '',Q8: '',Q9: '',Q10: '',
@@ -153,6 +154,7 @@ class variableAA extends React.Component{
         this.SaveQ13();this.SaveQ14();this.SaveQ15();this.SaveQ16();this.SaveQ17();this.SaveQ18();
         this.SaveQ19();this.SaveRoutine();
         alert('Reporte rutina creado');
+        this.setState({created:true})
 
     }
 
@@ -395,7 +397,7 @@ class variableAA extends React.Component{
              {this.state.statusActual?
                 <div>
                 <td className="PDF"><button className="btn btn-outline-danger"  data-toggle="modal" data-target="#myModal">PDF</button></td>
-                <div class="modal fade" id="myModal">
+                    <div class="modal fade" id="myModal">
                     <div class="modal-dialog modal-xl">
                     <div class="modal-content">
                     

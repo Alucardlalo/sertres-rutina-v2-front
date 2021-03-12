@@ -11,7 +11,7 @@ class LoginPage extends React.Component{
                     <h2 className="titleMain">Bienvenido a Sertres Rutinas</h2>
                 </div>
                 <div className="container">
-                    <img src={Logo} className="LogoLogin"/>
+                    <img src="./rutinas/LogoSertres.jpg" className="LogoLogin"/>
                     <Login/>
                 </div>
             </React.Fragment>

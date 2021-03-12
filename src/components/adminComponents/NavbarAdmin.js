@@ -38,7 +38,7 @@ class NavbarAdmin extends React.Component{
                        <button className="btnLogout" onClick={this.logout}>salir</button>
                     </form>
                     <nav className="navbar navbar-expand-md bg-dark navbar-dark">
-                        <h3 className="navbar-brand">Sertres Admin  <img src={LogoSm} className="LogoImgSm"/></h3>
+                        <h3 className="navbar-brand">Sertres Admin  <img src="./rutinas/LogoSertresSm.jpg" className="LogoImgSm"/></h3>
                         <button className="navbar-toggler" type="button" data-toggle="collapse"
                                 data-target="#collapsibleNavbar">
                             <span className="navbar-toggler-icon"></span>
@@ -58,7 +58,7 @@ class NavbarAdmin extends React.Component{
                                     <Link to="/Routinebody" className="nav-link" >Contenido Rutinas</Link>
                                 </li>
                             </ul>
-                            <img src={Logo} className="LogoImg"/>
+                            <img src="./rutinas/LogoSertres.jpg" className="LogoImg"/>
                         </div>
                     </nav>
                 </div>

@@ -2,6 +2,12 @@
     background-color:white;
     
 }
+.PDF1{
+    width: 210mm;
+    minHeight: 297mm;
+    marginLeft: auto;
+    marginRight: auto;
+}
 .trBodyAA{
     background-color: #1f1f9a;
 }
